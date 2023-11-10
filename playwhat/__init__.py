@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request
 import os
 
 
@@ -24,7 +24,14 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route("/app")
+    @app.route("/home")
+    def home():
+        return render_template("app/index.html.j2")
+
+    @app.route("/searchform")
+    def searchform():
+        return render_template("app/searchform.html.j2")
+
     def hello():
         return "Hello, World!"
 
