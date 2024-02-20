@@ -2,15 +2,13 @@
 name = "playwhat"
 version = "0.1.0"
 description = ""
-authors = ["0xChloe"]
+authors = ["0xChloe <chloe@catastrophesoftware.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-flask = "^3.0.0"
-bs4 = "^0.0.1"
-python-steam-api = "^1.2.0"
-steamsignin = "^1.1.1"
+flask = "^3.0.2"
+bs4 = "^0.0.2"
 
 
 [build-system]
