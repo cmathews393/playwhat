@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, blueprints, jsonify
 import os
-
+from playwhat.modules import gamepass
 
 
 def create_app(test_config=None):
@@ -10,11 +10,11 @@ def create_app(test_config=None):
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
     )
-
     
+    product_info = gamepass.mainfunc()
 
-    @app.route("/home")
-    def home(service):
-        return render_template("index.html.j2")
+    @app.route("/")
+    def home():
+        return render_template("index.html.j2", product_info=product_info)
 
     return app

@@ -177,3 +177,5 @@ build/
 *.cbz
 
 .env
+playwhat/client_secrets.json
+sample.json

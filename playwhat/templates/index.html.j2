@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Display</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto; /* Adjust the number of columns here */
+            padding: 10px;
+            gap: 10px;
+        }
+        .grid-item {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        {% for item in product_info %}
+            <div class="grid-item">
+                {% if item.uri %}
+                    <img src="{{ item.uri }}" alt="{{ item.sku_title }}">
+                {% endif %}
+                <h3>{{ item.sku_title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
